@@ -19,31 +19,31 @@ import java.nio.file.Paths;
 @Service
 public class ResumeService {
 
+    private final ResumeProperties resumeProperties;
     Logger logger = LoggerFactory.getLogger(ResumeService.class);
 
-    private final ResumeProperties resumeProperties;
-
     @Autowired
-    public ResumeService(ResumeProperties resumeProperties){
+    public ResumeService(ResumeProperties resumeProperties) {
         this.resumeProperties = resumeProperties;
     }
 
-    public Resource download(File file){
+    public Resource download(final File file) {
         return getByteArrayResource(getPath(file));
     }
 
-    public File getFile(String name, String format) {
-        String pathName = resumeProperties.getPath()
+    public File getFile(final String name,
+                        final String format) {
+        final String pathName = resumeProperties.getPath()
                 .concat(name)
                 .concat(".")
                 .concat(format);
         return new File(pathName);
     }
 
-    private Resource getByteArrayResource(Path path) {
+    private Resource getByteArrayResource(final Path path) {
         ByteArrayResource byteArrayResource = null;
         try {
-            byte[] bytes = Files.readAllBytes(path);
+            final byte[] bytes = Files.readAllBytes(path);
             byteArrayResource = new ByteArrayResource(bytes);
         } catch (IOException e) {
             logger.error("Error while trying to get file, path {}. Error: {}", path, e.getMessage());
@@ -51,7 +51,7 @@ public class ResumeService {
         return byteArrayResource;
     }
 
-    private Path getPath(File file) {
+    private Path getPath(final File file) {
         return Paths.get(file.getAbsolutePath());
     }
 }
