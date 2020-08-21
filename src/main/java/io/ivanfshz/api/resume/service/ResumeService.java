@@ -1,7 +1,6 @@
 package io.ivanfshz.api.resume.service;
 
-import io.ivanfshz.api.properties.ResumeProperties;
-import io.ivanfshz.api.resume.controller.ResumeController;
+import io.ivanfshz.api.resume.properties.ResumeProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
