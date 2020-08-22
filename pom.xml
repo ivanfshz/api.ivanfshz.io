@@ -8,11 +8,10 @@
 		<version>2.3.3.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>io.ivanfshz</groupId>
-	<artifactId>api</artifactId>
+	<groupId>io.ivanfshz.api</groupId>
+	<artifactId>resume</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>resume</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Resume API</description>
 
 	<properties>
 		<java.version>1.8</java.version>
